@@ -1,0 +1,77 @@
+.body {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100vw;
+}
+
+.navbar {
+  background-color: #222f3e;
+  width: 100vw;
+  height: 50px;
+  margin: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout {
+  color: white;
+  font-size: 20px;
+  font-family: "poppins";
+  font-weight: 300;
+}
+.navbar h1 {
+  color: white;
+  margin: 0;
+  font-size: 23px;
+  font-weight: 200;
+  font-family: "poppins";
+  padding-left: 12px;
+}
+.navbar text {
+  color: white;
+  text-decoration: underline;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+  padding-right: 5px;
+}
+.sidebar {
+  position: fixed;
+  width: 350px;
+  height: 100vh;
+  background-color: #fafafa;
+  display: block;
+  top: calc(50px);
+}
+.sidebar div:nth-child(1) {
+  border: 1px dashed gray;
+  width: full;
+  height: 60px;
+  text-align: start;
+  border-top: none;
+  padding-left: 3%;
+  padding-top: 8%;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+.sidebar div:nth-child(2) {
+  border: 1px dashed gray;
+  width: full;
+  height: 40px;
+  text-align: start;
+  padding-left: 3%;
+  padding-top: 11px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-top: none;
+}
+.child {
+  padding-top: 70px;
+  padding-left: 360px;
+}
