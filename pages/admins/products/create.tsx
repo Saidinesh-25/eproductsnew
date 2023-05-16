@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Layout from "../../../components/Layout";
+import Layout from "../../../components/layout";
 import styles from "styles/create.module.css";
 import { useState, ChangeEvent, useEffect, FormEvent } from "react";
 import ProductForm from "../../../components/form";

@@ -1,9 +1,8 @@
-import Layout from "../../../components/Layout";
+import Layout from "../../../components/layout";
 import { useEffect, useState } from "react";
-import Table from "../../../components/Table";
+import Table from "../../../components/table";
 import { log } from "console";
 import { useRouter } from "next/router";
-import { redirect } from "next/dist/server/api-utils";
 
 type products = {
   id: number;

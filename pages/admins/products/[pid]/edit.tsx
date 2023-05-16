@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Layout from "../../../../components/Layout";
+import Layout from "../../../../components/layout";
 import { useState } from "react";
 import ProductForm from "../../../../components/form";
 type Product = {
