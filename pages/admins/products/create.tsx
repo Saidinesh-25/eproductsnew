@@ -32,7 +32,7 @@ const CreateProduct = () => {
 
     try {
       const response = await fetch(
-        "http://eproductsnew-saidinesh-25.vercel.app/products",
+        "api/products",
         {
           method: "POST",
           headers: {

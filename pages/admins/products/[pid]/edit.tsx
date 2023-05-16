@@ -34,7 +34,7 @@ const EditProduct = (props: any) => {
 
     try {
       const response = await fetch(
-        `https://eproductsnew-saidinesh-25.vercel.app/products/${pid}`,
+        `api/products/${pid}`,
         {
           method: "PUT",
           headers: {
