@@ -31,13 +31,16 @@ const CreateProduct = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3001/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productObject),
-      });
+      const response = await fetch(
+        "http://eproductsnew-saidinesh-25.vercel.app/products",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productObject),
+        }
+      );
       const newProduct = await response.json();
       setProducts([...products, newProduct]);
       setTitle("");

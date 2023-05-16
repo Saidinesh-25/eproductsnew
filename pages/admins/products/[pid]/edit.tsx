@@ -33,13 +33,16 @@ const EditProduct = (props: any) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3001/products/${pid}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productObject),
-      });
+      const response = await fetch(
+        `https://eproductsnew-saidinesh-25.vercel.app/products/${pid}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productObject),
+        }
+      );
       const newProduct = await response.json();
       console.log(newProduct, "whatisthenewproduct");
       //   setProducts([newProduct]);

@@ -23,9 +23,12 @@ const ProductTable = ({ value }: any) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
     try {
-      await fetch(`http://localhost:3001/products/${id}`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://eproductsnew-saidinesh-25.vercel.app/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       console.log("Product deleted successfully");
     } catch (error) {
       console.log("Error deleting product:", error);
@@ -45,7 +48,9 @@ export async function getServerSideProps() {
   //       return response.json();
   //     }
   //   ); we can use both the methods
-  const a = await fetch(`http://localhost:3001/products`);
+  const a = await fetch(
+    `https://eproductsnew-saidinesh-25.vercel.app/products`
+  );
   log(a, "afterawait");
   const value = await a.json();
 
