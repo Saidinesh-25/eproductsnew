@@ -1,5 +1,5 @@
 import Layout from "../../../components/layout";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Table from "../../../components/table";
 import { log } from "console";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ const ProductTable = ({ value }: any) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
     try {
-      await fetch(`api/products/${id}`, {
+      await fetch(`http://localhost:3001/products/${id}`, {
         method: "DELETE",
       });
       console.log("Product deleted successfully");
@@ -45,7 +45,7 @@ export async function getServerSideProps() {
   //       return response.json();
   //     }
   //   ); we can use both the methods
-  const a = await fetch(`api/products`);
+  const a = await fetch(`http://localhost:3001/products`);
   log(a, "afterawait");
   const value = await a.json();
 

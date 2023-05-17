@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import Layout from "../../../../components/layout";
 import { useState } from "react";
 import ProductForm from "../../../../components/form";
-type Product = {
-  id: number;
-  title: string;
-  images: string;
-};
+// type Product = {
+//   id: number;
+//   title: string;
+//   images: string;
+// };
 
 const EditProduct = (props: any) => {
   const { pid, productData } = props;
@@ -33,16 +33,13 @@ const EditProduct = (props: any) => {
     };
 
     try {
-      const response = await fetch(
-        `api/products/${pid}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(productObject),
-        }
-      );
+      const response = await fetch(`http://localhost:3001/products/${pid}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productObject),
+      });
       const newProduct = await response.json();
       console.log(newProduct, "whatisthenewproduct");
       //   setProducts([newProduct]);
