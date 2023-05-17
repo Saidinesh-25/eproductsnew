@@ -57,6 +57,7 @@ const CreateProduct = () => {
           handleTitle={handleTitle}
           handleImageUpload={handleImageUpload}
           handleSubmit={handleSubmit}
+          buttonText="Add Product"
         />
       </div>
     </Layout>

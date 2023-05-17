@@ -3,6 +3,7 @@ import { useState } from "react";
 import Table from "../../../components/table";
 import { log } from "console";
 import { useRouter } from "next/router";
+import styles from "styles/table.module.css";
 
 type products = {
   id: number;
@@ -34,7 +35,9 @@ const ProductTable = ({ value }: any) => {
 
   return (
     <Layout>
-      <button onClick={handleRoute}>Add products</button>
+      <button className={styles.btn2} onClick={handleRoute}>
+        Add products
+      </button>
       <Table products={products} handleDelete={handleDelete} />
     </Layout>
   );

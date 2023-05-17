@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Layout from "../../../../components/layout";
 import { useState } from "react";
 import ProductForm from "../../../../components/form";
+import styles from "styles/create.module.css";
 // type Product = {
 //   id: number;
 //   title: string;
@@ -52,13 +53,14 @@ const EditProduct = (props: any) => {
   };
   return (
     <Layout>
-      <div>
+      <div className={styles.body}>
         <ProductForm
           title={title}
           images={images}
           handleTitle={handleTitle}
           handleImageUpload={handleImageUpload}
           handleSubmit={handleSubmit}
+          buttonText="save"
         />
       </div>
     </Layout>

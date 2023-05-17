@@ -1,5 +1,4 @@
 .body {
- 
   width: 1050px;
   height: auto;
 }
@@ -64,6 +63,22 @@
 .btn1 {
   background-color: #26abff;
   width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 0;
+  margin-bottom: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: none;
+  cursor: pointer;
+}
+.btn2 {
+  background-color: #26abff;
+  width: 140px;
   height: 40px;
   border: none;
   border-radius: 25px;

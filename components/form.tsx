@@ -7,6 +7,7 @@ type Props = {
   handleTitle: (e: ChangeEvent<HTMLInputElement>) => void;
   handleImageUpload: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  buttonText: string;
 };
 const ProductForm = ({
   title,
@@ -14,6 +15,7 @@ const ProductForm = ({
   handleTitle,
   handleImageUpload,
   handleSubmit,
+  buttonText,
 }: Props) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -37,7 +39,9 @@ const ProductForm = ({
         />
       </div>
       <div>
-        <button type="submit">Add Product</button>
+        <button className={styles.btn1} type="submit">
+          {buttonText}
+        </button>
       </div>
     </form>
   );
