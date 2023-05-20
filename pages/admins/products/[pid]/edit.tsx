@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import Layout from "../../../../components/layout";
 import { useState } from "react";
 import ProductForm from "../../../../components/form";
 import styles from "styles/create.module.css";
+import Layout from "../../../../components/layout";
 
 const EditProduct = (props: any) => {
   const { pid, productData } = props;
