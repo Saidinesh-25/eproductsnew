@@ -1,7 +1,6 @@
 import Layout from "../../../components/layout";
 import { useState } from "react";
 import Table from "../../../components/table";
-
 import { useRouter } from "next/router";
 import styles from "styles/table.module.css";
 
