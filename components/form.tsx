@@ -1,22 +1,22 @@
-import { ChangeEvent, FormEvent } from "react";
 import styles from "styles/form.module.css";
 
 type Props = {
   title: string;
   images: string;
-  handleTitle: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleImageUpload: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  handleTitle: (e: any) => void;
+  handleImageUpload: (e: any) => void;
+  handleSubmit: (e: any) => void;
   buttonText: string;
 };
-const ProductForm = ({
-  title,
-  images,
-  handleTitle,
-  handleImageUpload,
-  handleSubmit,
-  buttonText,
-}: Props) => {
+const ProductForm = (props: Props) => {
+  const {
+    title,
+    images,
+    handleTitle,
+    handleImageUpload,
+    handleSubmit,
+    buttonText,
+  } = props;
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formgroup}>

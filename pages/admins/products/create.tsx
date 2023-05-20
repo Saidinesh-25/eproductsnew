@@ -3,27 +3,22 @@ import Layout from "../../../components/layout";
 import styles from "styles/create.module.css";
 import { useState, ChangeEvent, useEffect, FormEvent } from "react";
 import ProductForm from "../../../components/form";
-interface Product {
-  id: number;
-  title: string;
-  images: string;
-}
 
 const CreateProduct = () => {
   const reRoute = useRouter();
-  const [products, setProducts] = useState<Product[]>([]);
+
   const [title, setTitle] = useState("");
   const [images, setImages] = useState("");
 
-  const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleTitle = (e: any) => {
     setTitle(e.target.value);
   };
 
-  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = (e: any) => {
     setImages(e.target.value);
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const productObject = {
       title: title,
@@ -31,15 +26,14 @@ const CreateProduct = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3001/products`, {
+      const response = await fetch(`https://pdata.onrender.com/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(productObject),
       });
-      const newProduct = await response.json();
-      setProducts([...products, newProduct]);
+      console.log(response);
       setTitle("");
       setImages("");
     } catch (error) {

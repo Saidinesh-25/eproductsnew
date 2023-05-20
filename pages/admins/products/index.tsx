@@ -1,7 +1,7 @@
 import Layout from "../../../components/layout";
 import { useState } from "react";
 import Table from "../../../components/table";
-import { log } from "console";
+
 import { useRouter } from "next/router";
 import styles from "styles/table.module.css";
 
@@ -24,7 +24,7 @@ const ProductTable = ({ value }: any) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
     try {
-      await fetch(`http://localhost:3001/products/${id}`, {
+      await fetch(`https://pdata.onrender.com/products/${id}`, {
         method: "DELETE",
       });
       console.log("Product deleted successfully");
@@ -43,14 +43,9 @@ const ProductTable = ({ value }: any) => {
   );
 };
 export async function getServerSideProps() {
-  //   const value = await fetch(`http://localhost:3001/products`).then(
-  //     (response) => {
-  //       return response.json();
-  //     }
-  //   ); we can use both the methods
-  const a = await fetch(`http://localhost:3001/products`);
-  log(a, "afterawait");
-  const value = await a.json();
+  const res = await fetch(`https://pdata.onrender.com/products`);
+  console.log(res, "afterawait");
+  const value = await res.json();
 
   console.log(value, "lolololololollo");
   return {

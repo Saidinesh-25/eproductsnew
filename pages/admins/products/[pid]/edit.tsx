@@ -3,11 +3,6 @@ import Layout from "../../../../components/layout";
 import { useState } from "react";
 import ProductForm from "../../../../components/form";
 import styles from "styles/create.module.css";
-// type Product = {
-//   id: number;
-//   title: string;
-//   images: string;
-// };
 
 const EditProduct = (props: any) => {
   const { pid, productData } = props;
@@ -34,20 +29,23 @@ const EditProduct = (props: any) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3001/products/${pid}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productObject),
-      });
+      const response = await fetch(
+        `https://pdata.onrender.com/products/${pid}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productObject),
+        }
+      );
       const newProduct = await response.json();
       console.log(newProduct, "whatisthenewproduct");
-      //   setProducts([newProduct]);
+
       setTitle("");
       setImages("");
     } catch (error) {
-      console.error("Error creating product:", error);
+      console.log("Error creating product:", error);
     }
     reRoute.push("/admins/products");
   };
@@ -70,7 +68,7 @@ const EditProduct = (props: any) => {
 export async function getServerSideProps(context: any) {
   const { pid } = context.query;
   console.log(context.query, "whatisthisquery");
-  const res = await fetch(`http://localhost:3001/products/${pid}`);
+  const res = await fetch(`https://pdata.onrender.com/products/${pid}`);
   const productData = await res.json();
   console.log(productData, "abx===");
   return { props: { pid: pid, productData: productData } };
