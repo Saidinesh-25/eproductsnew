@@ -11,10 +11,6 @@ type products = {
 };
 
 const ProductTable = ({ value }: any) => {
-  const reDirect = useRouter();
-  const handleRoute = () => {
-    reDirect.push("/admins/products/create");
-  };
   const [products, setProducts] = useState<products[]>(value);
 
   console.log(products, "fromjson");
@@ -34,9 +30,6 @@ const ProductTable = ({ value }: any) => {
 
   return (
     <Layout>
-      <button className={styles.btn2} onClick={handleRoute}>
-        Add products
-      </button>
       <Table products={products} handleDelete={handleDelete} />
     </Layout>
   );
